@@ -28,6 +28,9 @@ struct AssociatedStorage
         keyOptions: .weakMemory,
         valueOptions: .strongMemory
     )
+    
+    public
+    init() { }
 }
 
 //=== MARK: SimplyInitializable value
