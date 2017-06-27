@@ -49,6 +49,10 @@ platform :ios do
 
     # ===
 
+    pod_lib_lint
+
+    # ===
+
     versionNumber = get_version_number(xcodeproj: projName)
     puts 'Current VERSION number: ' + versionNumber
 
