@@ -2,11 +2,15 @@ import Foundation
 
 //===
 
+public
 protocol SimplyInitializable: class
 {
     init()
 }
 
+//===
+
+public
 protocol KeyObjectInitializable: class
 {
     associatedtype Key: AnyObject
@@ -16,7 +20,8 @@ protocol KeyObjectInitializable: class
 
 //===
 
-struct AssociatedStorage // scope
+public
+struct AssociatedStorage
 {
     fileprivate
     var storage = NSMapTable<AnyObject, AnyObject>(
@@ -27,6 +32,7 @@ struct AssociatedStorage // scope
 
 //=== MARK: SimplyInitializable value
 
+public
 extension AssociatedStorage
 {
     func get<Key, Value>(for keyObject: Key) -> Value where
@@ -51,6 +57,7 @@ extension AssociatedStorage
 
 //=== MARK: KeyObjectInitializable value
 
+public
 extension AssociatedStorage
 {
     func get<Key, Value>(for keyObject: Key) -> Value where
@@ -76,6 +83,7 @@ extension AssociatedStorage
 
 //=== MARK: Manually explicitly initializable value
 
+public
 extension AssociatedStorage
 {
     func set<Key, Value>(_ valueObject: Value, for keyObject: Key) where
@@ -104,6 +112,7 @@ extension AssociatedStorage
 
 //=== MARK: Explicitly initializable value via closure
 
+public
 extension AssociatedStorage
 {
     func get<Key, Value>(
