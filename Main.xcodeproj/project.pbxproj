@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04FEE1D057FBD1D784614AD2 /* AssociatedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B05581D1CA32B5C82747C43 /* AssociatedStorage.swift */; };
-		1CA611AB0DC36F33896357D0 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C709B03B86E2478E7F6310B /* Main.swift */; };
+		1CA611AB0DC36F33896357D0 /* SimplyInitializableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C709B03B86E2478E7F6310B /* SimplyInitializableTests.swift */; };
 		2648961189FD124BE56CB276 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D441873CAA554523F67080C /* Pods_Tests.framework */; };
 		3DE7C1C3EAAB3B45BD09BABE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF8BD0BDC47C1614E851B82E /* Foundation.framework */; };
 		70EE9BDFB0D31384065A4D9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF8BD0BDC47C1614E851B82E /* Foundation.framework */; };
@@ -50,11 +50,11 @@
 
 /* Begin PBXFileReference section */
 		0B05581D1CA32B5C82747C43 /* AssociatedStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AssociatedStorage.swift; sourceTree = "<group>"; };
-		1C709B03B86E2478E7F6310B /* Main.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		1C709B03B86E2478E7F6310B /* SimplyInitializableTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimplyInitializableTests.swift; sourceTree = "<group>"; };
 		2D441873CAA554523F67080C /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C02BCAF95E34DD9DEBA9D00 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		74E544D902BD0E8A557972F2 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		86880F2E66B6364AED4C0C4B /* Fwk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Fwk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86880F2E66B6364AED4C0C4B /* Fwk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Fwk.framework; path = XCEAssociatedStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A25C1A2D21DBC28111F831D3 /* Pods_Fwk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fwk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B921C3759616627888734B42 /* Pods-Fwk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fwk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fwk/Pods-Fwk.debug.xcconfig"; sourceTree = "<group>"; };
 		C64DC69E57BC29B1A511641E /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,9 +98,8 @@
 		140AB123A76999C61D0E6CDB /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1C709B03B86E2478E7F6310B /* Main.swift */,
+				1C709B03B86E2478E7F6310B /* SimplyInitializableTests.swift */,
 			);
-			name = Tests;
 			path = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
@@ -147,7 +146,7 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = "$local";
+			name = $local;
 			sourceTree = "<group>";
 		};
 		AAD485A61ED5A43B31CF3440 /* Sources */ = {
@@ -155,7 +154,6 @@
 			children = (
 				0B05581D1CA32B5C82747C43 /* AssociatedStorage.swift */,
 			);
-			name = Sources;
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
 		};
@@ -320,7 +318,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-			showEnvVarsInLog = 1;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -329,7 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CA611AB0DC36F33896357D0 /* Main.swift in Sources */,
+				1CA611AB0DC36F33896357D0 /* SimplyInitializableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

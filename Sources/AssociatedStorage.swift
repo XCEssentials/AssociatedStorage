@@ -42,11 +42,7 @@ struct AssociatedStorage
      
      - Note: The storage is initialized with `keyOptions` set to `weakMemory` and `valueOptions` set to `strongMemory`, which means each value is being kept in this collection as long as the object that is used as key is being kept in memory; as soon as the `key` object is deallocated the whole record automatically being removed from the storage.
      */
-    fileprivate
-    var storage = NSMapTable<AnyObject, AnyObject>(
-        keyOptions: .weakMemory,
-        valueOptions: .strongMemory
-    )
+    var storage = NSMapTable<AnyObject, AnyObject>.weakToStrongObjects()
 }
 
 //=== MARK: SimplyInitializable value
