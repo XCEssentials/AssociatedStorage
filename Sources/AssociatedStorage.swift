@@ -60,6 +60,8 @@ extension AssociatedStorage
      Use as follows:
      
      ```swift
+     let associatedStorage = AssociatedStorage()
+     
      class Owner
      {
          // ...
@@ -75,13 +77,11 @@ extension AssociatedStorage
      
      let owner: Owner = //... object that is being held in memory elsewhere
      
-     let dependentForTheOwner: Dependent = AssociatedStorage.get(for: owner)
-     
-     //...
+     let dependentForTheOwner: Dependent = associatedStorage.get(for: owner)
      
      // later:
      
-     let dependentAgain: Dependent = AssociatedStorage.get(for: owner)
+     let dependentAgain: Dependent = associatedStorage.get(for: owner)
      
      // `dependentForTheOwner` is absolutely the same object as `dependentAgain`
      
@@ -122,6 +122,8 @@ extension AssociatedStorage
      Use as follows:
      
      ```swift
+     let associatedStorage = AssociatedStorage()
+     
      class Owner
      {
         // ...
@@ -137,13 +139,11 @@ extension AssociatedStorage
      
      let owner: Owner = // ... object that is being held in memory elsewhere
      
-     let dependentForTheOwner: Dependent = AssociatedStorage.get(for: owner)
-     
-     //...
+     let dependentForTheOwner: Dependent = associatedStorage.get(for: owner)
      
      // later:
      
-     let dependentAgain: Dependent = AssociatedStorage.get(for: owner)
+     let dependentAgain: Dependent = associatedStorage.get(for: owner)
      
      // `dependentForTheOwner` is absolutely the same object as `dependentAgain`
      
@@ -185,6 +185,8 @@ extension AssociatedStorage
      Use as follows:
      
      ```swift
+     let associatedStorage = AssociatedStorage()
+     
      class Owner
      {
          // ...
@@ -199,13 +201,14 @@ extension AssociatedStorage
      
      let dependentForTheOwner: Dependent = // create somehow...
      
-     AssociatedStorage.set(dependentForTheOwner, for: owner)
+     associatedStorage.set(dependentForTheOwner, for: owner)
      
-     let dependentAgain: Dependent = AssociatedStorage.get(for: owner)
+     let dependentAgain: Dependent? = associatedStorage.get(for: owner)
      
      // `dependentForTheOwner` is absolutely the same object as `dependentAgain`
      
      ```
+     
      - Parameter valueObject: Object that must be stored as associtated value for `keyObject`.
      
      - Parameter keyObject: Object that is being held in memory somewhere and for which it's required to return associated object of type `Value`.
@@ -223,6 +226,8 @@ extension AssociatedStorage
      Use as follows:
      
      ```swift
+     let associatedStorage = AssociatedStorage()
+     
      class Owner
      {
         // ...
@@ -235,9 +240,9 @@ extension AssociatedStorage
      
      let owner: Owner = // ... object that is being held in memory elsewhere
      
-     let dependentForTheOwner: Dependent = AssociatedStorage.get(for: owner)
+     let dependentForTheOwner: Dependent? = associatedStorage.get(for: owner)
      
-     let dependentAgain: Dependent = AssociatedStorage.get(for: owner)
+     let dependentAgain: Dependent? = associatedStorage.get(for: owner)
      
      // `dependentForTheOwner` is the same object as `dependentAgain`,
      // or `nil` if associated object is not set yet
@@ -276,6 +281,8 @@ extension AssociatedStorage
      Use as follows:
      
      ```swift
+     let associatedStorage = AssociatedStorage()
+     
      class Owner
      {
          // ...
@@ -288,14 +295,14 @@ extension AssociatedStorage
      
      let owner: Owner = //... object that is being held in memory elsewhere
      
-     let dependentForTheOwner: Dependent = AssociatedStorage.get(for: owner){ key in
+     let dependentForTheOwner: Dependent = associatedStorage.get(for: owner){ key in
      
-        // ... create and return somehow an instance of Dependent here,
-        // with or without usage of the `key` object;
-        // this closure must be passed every time when access valu eobjects of
-        // type `Dependent` via this particular variation of `get(...)` function,
-        // because otherwise it's unclear how else to instantiate `valueObject`
-        // on first access.
+         // ... create and return somehow an instance of Dependent here,
+         // with or without usage of the `key` object;
+         // this closure must be passed every time when access
+         // value objects of type `Dependent` via this particular variation
+         // of `get(...)` function, otherwise it's unclear how else to
+         // instantiate `valueObject` on first access.
      }
      
      ```
